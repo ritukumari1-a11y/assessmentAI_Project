@@ -1,0 +1,21 @@
+{
+  "_comment": "Test data for PracticeSoftwareTesting Toolshop UI/API registration flows",
+  "validUser": {
+    "firstName": "QA",
+    "lastName": "Automation",
+    "password": "PracticeQa!2026SecureXyZ",
+    "dob": "1990-05-15",
+    "phone": "0987654321",
+    "address": {
+      "street": "Zoey Shore",
+      "city": "Hesselbury",
+      "state": "Florida",
+      "country": "United States",
+      "postal_code": "1234AA"
+    }
+  },
+  "invalidUser": {
+    "email": "invalid-email",
+    "password": "short"
+  }
+}

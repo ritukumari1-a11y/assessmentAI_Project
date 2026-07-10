@@ -1,0 +1,49 @@
+{
+  "name": "playwright_generic_framework",
+  "version": "1.0.0",
+  "description": "QA Practical Assessment - PracticeSoftwareTesting Toolshop automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --project=testcases_regression",
+    "test:smoke": "npx playwright test --project=testcases_regression --grep @sanity",
+    "test:regression": "npx playwright test --project=testcases_regression --grep @regression",
+    "test:ui": "npx playwright test \"tests/UI Test\" --project=testcases_regression",
+    "test:api": "npx playwright test \"tests/API Test\" --project=testcases_regression",
+    "test:ui:ac1": "npx playwright test \"tests/UI Test/userRegistrationLogin.spec.js\" --project=testcases_regression",
+    "test:ui:ac2": "npx playwright test \"tests/UI Test/endToEndPurchaseFlow.spec.js\" --project=testcases_regression",
+    "test:api:ac1": "npx playwright test \"tests/API Test/userAuthCartCreation.spec.js\" --project=testcases_regression",
+    "test:api:ac2": "npx playwright test \"tests/API Test/productInvoiceGeneration.spec.js\" --project=testcases_regression",
+    "report": "npx playwright show-report playwright-report",
+    "allure:generate": "allure generate allure-results -o allure-report --clean",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-results",
+    "test:allure": "npm test && npm run allure:generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.6.2"
+  },
+  "dependencies": {
+    "@playwright/browser-chromium": "^1.40.0",
+    "allure-playwright": "^2.4.0",
+    "axios": "^1.7.4",
+    "csv-parse": "^7.0.1",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.46.0",
+    "faker": "^5.5.3",
+    "fs": "^0.0.1-security",
+    "Logger": "^0.0.0",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^1.1.1",
+    "sharp": "^0.35.3",
+    "sharp-pdf": "^0.1.3",
+    "winston": "^3.14.2",
+    "xml2js": "^0.6.2"
+  }
+}

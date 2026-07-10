@@ -1,0 +1,2 @@
+curl -X POST https://api.practicesoftwaretesting.comusers/login -H 'accept : application/json' -H 'Content-Type : application/json' -d '{"email":"nonexistent.user@mailinator.com","password":"WrongPassword!99"}'
+API AC1 negative passed: invalid login returned 401

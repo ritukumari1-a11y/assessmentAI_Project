@@ -1,0 +1,333 @@
+npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+Running 7 tests using 1 worker
+
+(node:31549) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Replaced!
+curl -X POST https://api.practicesoftwaretesting.comusers/register -H 'accept : application/json' -H 'Content-Type : application/json' -d '{"first_name":"QA","last_name":"Automation","email":"qa.automation.qicadlhx@mailinator.com","password":"PracticeQa!2026SecureXyZ","dob":"1990-05-15","phone":"0987654321","address":{"street":"Zoey Shore","city":"Hesselbury","state":"Florida","country":"United States","postal_code":"1234AA"}}'
+curl -X POST https://api.practicesoftwaretesting.comusers/login -H 'accept : application/json' -H 'Content-Type : application/json' -d '{"email":"qa.automation.qicadlhx@mailinator.com","password":"PracticeQa!2026SecureXyZ"}'
+curl -X POST https://api.practicesoftwaretesting.comcarts -H 'accept : application/json' -H 'Content-Type : application/json' -H 'Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3ODM2ODA1NzQsImV4cCI6MTc4MzY4MDg3NCwibmJmIjoxNzgzNjgwNTc0LCJqdGkiOiJ2NW1rRlA3eHpZczh2ZG1qIiwic3ViIjoiMDFreDV0YjgyamF6dnYxN2ViNWU5Nm43eDAiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.1Xpi2Y2Sw1VJViDvI0Qm85SD-bQOCe4WY4N9lBN60zc' -d '{}'
+API AC1 passed: auth and cart creation verified
+  ✓  1 [toolshop_assessment] › API/01_userAuthCartCreation.spec.js:29:3 › API AC1: User Authentication & Cart Creation › API AC1: Register, login, obtain bearer token and create cart @sanity @regression (2.0s)
+curl -X POST https://api.practicesoftwaretesting.comusers/login -H 'accept : application/json' -H 'Content-Type : application/json' -d '{"email":"nonexistent.user@mailinator.com","password":"WrongPassword!99"}'
+API AC1 negative passed: invalid login returned 401
+  ✓  2 [toolshop_assessment] › API/01_userAuthCartCreation.spec.js:64:3 › API AC1: User Authentication & Cart Creation › API AC1 negative: Login with invalid credentials returns 4xx @regression (528ms)
+Replaced!
+curl -X POST https://api.practicesoftwaretesting.comusers/register -H 'accept : application/json' -H 'Content-Type : application/json' -d '{"first_name":"QA","last_name":"Automation","email":"qa.automation.bq6xxsqq@mailinator.com","password":"PracticeQa!2026SecureXyZ","dob":"1990-05-15","phone":"0987654321","address":{"street":"Zoey Shore","city":"Hesselbury","state":"Florida","country":"United States","postal_code":"1234AA"}}'
+curl -X POST https://api.practicesoftwaretesting.comusers/login -H 'accept : application/json' -H 'Content-Type : application/json' -d '{"email":"qa.automation.bq6xxsqq@mailinator.com","password":"PracticeQa!2026SecureXyZ"}'
+curl -X POST https://api.practicesoftwaretesting.comcarts -H 'accept : application/json' -H 'Content-Type : application/json' -H 'Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3ODM2ODA1NzYsImV4cCI6MTc4MzY4MDg3NiwibmJmIjoxNzgzNjgwNTc2LCJqdGkiOiJUR2RhSU4ybmRTazFzV1I5Iiwic3ViIjoiMDFreDV0YmFicWFxYnJqamZ6dHZka3B5dHoiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.0Hf_khsQvOCFoSL4-ExOLR4OJS4o_URg-jmDkUaH87c' -d '{}'
+curl -X GET https://api.practicesoftwaretesting.comproducts -H 'accept : application/json' -H 'Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3ODM2ODA1NzYsImV4cCI6MTc4MzY4MDg3NiwibmJmIjoxNzgzNjgwNTc2LCJqdGkiOiJUR2RhSU4ybmRTazFzV1I5Iiwic3ViIjoiMDFreDV0YmFicWFxYnJqamZ6dHZka3B5dHoiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.0Hf_khsQvOCFoSL4-ExOLR4OJS4o_URg-jmDkUaH87c'
+curl -X POST https://api.practicesoftwaretesting.comcarts/01kx5tbbehnsxp4xfckyw0n2t3 -H 'accept : application/json' -H 'Content-Type : application/json' -H 'Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3ODM2ODA1NzYsImV4cCI6MTc4MzY4MDg3NiwibmJmIjoxNzgzNjgwNTc2LCJqdGkiOiJUR2RhSU4ybmRTazFzV1I5Iiwic3ViIjoiMDFreDV0YmFicWFxYnJqamZ6dHZka3B5dHoiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.0Hf_khsQvOCFoSL4-ExOLR4OJS4o_URg-jmDkUaH87c' -d '{"product_id":"01KX5QH49R6X3S69H22B4KT0E9","quantity":2}'
+curl -X GET https://api.practicesoftwaretesting.comcarts/01kx5tbbehnsxp4xfckyw0n2t3 -H 'accept : application/json' -H 'Content-Type : application/json' -H 'Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3ODM2ODA1NzYsImV4cCI6MTc4MzY4MDg3NiwibmJmIjoxNzgzNjgwNTc2LCJqdGkiOiJUR2RhSU4ybmRTazFzV1I5Iiwic3ViIjoiMDFreDV0YmFicWFxYnJqamZ6dHZka3B5dHoiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.0Hf_khsQvOCFoSL4-ExOLR4OJS4o_URg-jmDkUaH87c'
+curl -X POST https://api.practicesoftwaretesting.cominvoices -H 'accept : application/json' -H 'Content-Type : application/json' -H 'Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3ODM2ODA1NzYsImV4cCI6MTc4MzY4MDg3NiwibmJmIjoxNzgzNjgwNTc2LCJqdGkiOiJUR2RhSU4ybmRTazFzV1I5Iiwic3ViIjoiMDFreDV0YmFicWFxYnJqamZ6dHZka3B5dHoiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.0Hf_khsQvOCFoSL4-ExOLR4OJS4o_URg-jmDkUaH87c' -d '{"billing_street":"Zoey Shore","billing_city":"Hesselbury","billing_state":"Florida","billing_country":"TG","billing_postal_code":"1234AA","payment_method":"cash-on-delivery","payment_details":{},"cart_id":"01kx5tbbehnsxp4xfckyw0n2t3"}'
+API AC2 passed: product selection and invoice generation verified
+  ✓  3 [toolshop_assessment] › API/02_productInvoiceGeneration.spec.js:50:3 › API AC2: Product Selection & Invoice Generation › API AC2: Retrieve products, add to cart, verify cart and generate invoice @regression (2.2s)
+curl -X POST https://api.practicesoftwaretesting.cominvoices -H 'accept : application/json' -H 'Content-Type : application/json' -H 'Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3ODM2ODA1NzYsImV4cCI6MTc4MzY4MDg3NiwibmJmIjoxNzgzNjgwNTc2LCJqdGkiOiJUR2RhSU4ybmRTazFzV1I5Iiwic3ViIjoiMDFreDV0YmFicWFxYnJqamZ6dHZka3B5dHoiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.0Hf_khsQvOCFoSL4-ExOLR4OJS4o_URg-jmDkUaH87c' -d '{"billing_street":"Zoey Shore","billing_city":"Hesselbury","billing_state":"Florida","billing_country":"TG","billing_postal_code":"1234AA","payment_method":"cash-on-delivery","payment_details":{},"cart_id":"00000000000000000000000000"}'
+API AC2 negative passed: invalid cart invoice returned 404
+  ✓  4 [toolshop_assessment] › API/02_productInvoiceGeneration.spec.js:104:3 › API AC2: Product Selection & Invoice Generation › API AC2 negative: Generate invoice with invalid cart id returns 4xx @regression (567ms)
+  ✘  5 [toolshop_assessment] › UI/01_userRegistrationLogin.spec.js:20:3 › AC1: User Registration & Login › AC1: Register with valid details, login and verify profile @sanity @regression (47ms)
+(node:31633) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  6 [toolshop_assessment] › UI/01_userRegistrationLogin.spec.js:43:3 › AC1: User Registration & Login › AC1 negative: Login with incorrect password shows error @regression (13ms)
+(node:31643) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  7 [toolshop_assessment] › UI/02_endToEndPurchaseFlow.spec.js:33:3 › AC2: End-to-End Purchase Flow › AC2: Browse products, update cart, COD checkout and view invoice @regression (16ms)
+
+
+  1) [toolshop_assessment] › UI/01_userRegistrationLogin.spec.js:20:3 › AC1: User Registration & Login › AC1: Register with valid details, login and verify profile @sanity @regression 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /var/folders/08/q9nc8yb17pz5xc4xkw9gk1_w0000gn/T/cursor-sandbox-cache/80e28fcf40a714676ce4252eb3105f2b/playwright/chromium-1091/chrome-mac/Chromium.app/Contents/MacOS/Chromium --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --enable-use-zoom-for-dsf=false --use-angle --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/08/q9nc8yb17pz5xc4xkw9gk1_w0000gn/T/playwright_chromiumdev_profile-xGxS1Q --remote-debugging-pipe --no-startup-window
+    <launched> pid=31594
+    [pid=31594][err] Received signal 11 SEGV_ACCERR 000100000008
+    [pid=31594][err]  [0x000126e0e344]
+    [pid=31594][err]  [0x00012b01e96c]
+    [pid=31594][err]  [0x00012b02b2f0]
+    [pid=31594][err]  [0x0001848cf744]
+    [pid=31594][err]  [0x00019841c6e8]
+    [pid=31594][err]  [0x0001982c1e20]
+    [pid=31594][err]  [0x000197f8fcb0]
+    [pid=31594][err]  [0x000197ff2ae4]
+    [pid=31594][err]  [0x00018674fd00]
+    [pid=31594][err]  [0x0001868b553c]
+    [pid=31594][err]  [0x000189b7170c]
+    [pid=31594][err]  [0x0001847244b0]
+    [pid=31594][err]  [0x00018470d630]
+    [pid=31594][err]  [0x000189b70bb0]
+    [pid=31594][err]  [0x000188d7c888]
+    [pid=31594][err]  [0x0001897e6bb0]
+    [pid=31594][err]  [0x000188da3a88]
+    [pid=31594][err]  [0x000188fbbea8]
+    [pid=31594][err]  [0x000188da3048]
+    [pid=31594][err]  [0x00012b034470]
+    [pid=31594][err]  [0x00012b032ee0]
+    [pid=31594][err]  [0x00012afec1ec]
+    [pid=31594][err]  [0x00012afbb06c]
+    [pid=31594][err]  [0x000129108ad8]
+    [pid=31594][err]  [0x00012910a2a4]
+    [pid=31594][err]  [0x00013098ec30]
+    [pid=31594][err]  [0x00012a45b858]
+    [pid=31594][err]  [0x00012a45cda4]
+    [pid=31594][err]  [0x00012a45c8c8]
+    [pid=31594][err]  [0x00012a45ae98]
+    [pid=31594][err]  [0x00012a45b28c]
+    [pid=31594][err]  [0x00013097fcac]
+    [pid=31594][err]  [0x000126e08e6c]
+    [pid=31594][err]  [0x000102660938]
+    [pid=31594][err]  [0x000184507e00]
+    [pid=31594][err] [end of stack trace]
+    Call log:
+      [2m- <launching> /var/folders/08/q9nc8yb17pz5xc4xkw9gk1_w0000gn/T/cursor-sandbox-cache/80e28fcf40a714676ce4252eb3105f2b/playwright/chromium-1091/chrome-mac/Chromium.app/Contents/MacOS/Chromium --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --enable-use-zoom-for-dsf=false --use-angle --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/08/q9nc8yb17pz5xc4xkw9gk1_w0000gn/T/playwright_chromiumdev_profile-xGxS1Q --remote-debugging-pipe --no-startup-window[22m
+    [2m  - <launched> pid=31594[22m
+    [2m  - [pid=31594][err] Received signal 11 SEGV_ACCERR 000100000008[22m
+    [2m  - [pid=31594][err]  [0x000126e0e344][22m
+    [2m  - [pid=31594][err]  [0x00012b01e96c][22m
+    [2m  - [pid=31594][err]  [0x00012b02b2f0][22m
+    [2m  - [pid=31594][err]  [0x0001848cf744][22m
+    [2m  - [pid=31594][err]  [0x00019841c6e8][22m
+    [2m  - [pid=31594][err]  [0x0001982c1e20][22m
+    [2m  - [pid=31594][err]  [0x000197f8fcb0][22m
+    [2m  - [pid=31594][err]  [0x000197ff2ae4][22m
+    [2m  - [pid=31594][err]  [0x00018674fd00][22m
+    [2m  - [pid=31594][err]  [0x0001868b553c][22m
+    [2m  - [pid=31594][err]  [0x000189b7170c][22m
+    [2m  - [pid=31594][err]  [0x0001847244b0][22m
+    [2m  - [pid=31594][err]  [0x00018470d630][22m
+    [2m  - [pid=31594][err]  [0x000189b70bb0][22m
+    [2m  - [pid=31594][err]  [0x000188d7c888][22m
+    [2m  - [pid=31594][err]  [0x0001897e6bb0][22m
+    [2m  - [pid=31594][err]  [0x000188da3a88][22m
+    [2m  - [pid=31594][err]  [0x000188fbbea8][22m
+    [2m  - [pid=31594][err]  [0x000188da3048][22m
+    [2m  - [pid=31594][err]  [0x00012b034470][22m
+    [2m  - [pid=31594][err]  [0x00012b032ee0][22m
+    [2m  - [pid=31594][err]  [0x00012afec1ec][22m
+    [2m  - [pid=31594][err]  [0x00012afbb06c][22m
+    [2m  - [pid=31594][err]  [0x000129108ad8][22m
+    [2m  - [pid=31594][err]  [0x00012910a2a4][22m
+    [2m  - [pid=31594][err]  [0x00013098ec30][22m
+    [2m  - [pid=31594][err]  [0x00012a45b858][22m
+    [2m  - [pid=31594][err]  [0x00012a45cda4][22m
+    [2m  - [pid=31594][err]  [0x00012a45c8c8][22m
+    [2m  - [pid=31594][err]  [0x00012a45ae98][22m
+    [2m  - [pid=31594][err]  [0x00012a45b28c][22m
+    [2m  - [pid=31594][err]  [0x00013097fcac][22m
+    [2m  - [pid=31594][err]  [0x000126e08e6c][22m
+    [2m  - [pid=31594][err]  [0x000102660938][22m
+    [2m  - [pid=31594][err]  [0x000184507e00][22m
+    [2m  - [pid=31594][err] [end of stack trace][22m
+
+
+
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/UI-01_userRegistrationLogin-AC1-User-Registrat-50b56-ails-login-and-verify-profile-sanity-regression-toolshop-assessment/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/UI-01_userRegistrationLogin-AC1-User-Registrat-50b56-ails-login-and-verify-profile-sanity-regression-toolshop-assessment/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [toolshop_assessment] › UI/01_userRegistrationLogin.spec.js:43:3 › AC1: User Registration & Login › AC1 negative: Login with incorrect password shows error @regression 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /var/folders/08/q9nc8yb17pz5xc4xkw9gk1_w0000gn/T/cursor-sandbox-cache/80e28fcf40a714676ce4252eb3105f2b/playwright/chromium-1091/chrome-mac/Chromium.app/Contents/MacOS/Chromium --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --enable-use-zoom-for-dsf=false --use-angle --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/08/q9nc8yb17pz5xc4xkw9gk1_w0000gn/T/playwright_chromiumdev_profile-kmUahg --remote-debugging-pipe --no-startup-window
+    <launched> pid=31635
+    [pid=31635][err] Received signal 11 SEGV_ACCERR 000100000008
+    [pid=31635][err]  [0x00012060e344]
+    [pid=31635][err]  [0x00012481e96c]
+    [pid=31635][err]  [0x00012482b2f0]
+    [pid=31635][err]  [0x0001848cf744]
+    [pid=31635][err]  [0x00019841c6e8]
+    [pid=31635][err]  [0x0001982c1e20]
+    [pid=31635][err]  [0x000197f8fcb0]
+    [pid=31635][err]  [0x000197ff2ae4]
+    [pid=31635][err]  [0x00018674fd00]
+    [pid=31635][err]  [0x0001868b553c]
+    [pid=31635][err]  [0x000189b7170c]
+    [pid=31635][err]  [0x0001847244b0]
+    [pid=31635][err]  [0x00018470d630]
+    [pid=31635][err]  [0x000189b70bb0]
+    [pid=31635][err]  [0x000188d7c888]
+    [pid=31635][err]  [0x0001897e6bb0]
+    [pid=31635][err]  [0x000188da3a88]
+    [pid=31635][err]  [0x000188fbbea8]
+    [pid=31635][err]  [0x000188da3048]
+    [pid=31635][err]  [0x000124834470]
+    [pid=31635][err]  [0x000124832ee0]
+    [pid=31635][err]  [0x0001247ec1ec]
+    [pid=31635][err]  [0x0001247bb06c]
+    [pid=31635][err]  [0x000122908ad8]
+    [pid=31635][err]  [0x00012290a2a4]
+    [pid=31635][err]  [0x00012a18ec30]
+    [pid=31635][err]  [0x000123c5b858]
+    [pid=31635][err]  [0x000123c5cda4]
+    [pid=31635][err]  [0x000123c5c8c8]
+    [pid=31635][err]  [0x000123c5ae98]
+    [pid=31635][err]  [0x000123c5b28c]
+    [pid=31635][err]  [0x00012a17fcac]
+    [pid=31635][err]  [0x000120608e6c]
+    [pid=31635][err]  [0x000104058938]
+    [pid=31635][err]  [0x000184507e00]
+    [pid=31635][err] [end of stack trace]
+    Call log:
+      [2m- <launching> /var/folders/08/q9nc8yb17pz5xc4xkw9gk1_w0000gn/T/cursor-sandbox-cache/80e28fcf40a714676ce4252eb3105f2b/playwright/chromium-1091/chrome-mac/Chromium.app/Contents/MacOS/Chromium --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --enable-use-zoom-for-dsf=false --use-angle --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/08/q9nc8yb17pz5xc4xkw9gk1_w0000gn/T/playwright_chromiumdev_profile-kmUahg --remote-debugging-pipe --no-startup-window[22m
+    [2m  - <launched> pid=31635[22m
+    [2m  - [pid=31635][err] Received signal 11 SEGV_ACCERR 000100000008[22m
+    [2m  - [pid=31635][err]  [0x00012060e344][22m
+    [2m  - [pid=31635][err]  [0x00012481e96c][22m
+    [2m  - [pid=31635][err]  [0x00012482b2f0][22m
+    [2m  - [pid=31635][err]  [0x0001848cf744][22m
+    [2m  - [pid=31635][err]  [0x00019841c6e8][22m
+    [2m  - [pid=31635][err]  [0x0001982c1e20][22m
+    [2m  - [pid=31635][err]  [0x000197f8fcb0][22m
+    [2m  - [pid=31635][err]  [0x000197ff2ae4][22m
+    [2m  - [pid=31635][err]  [0x00018674fd00][22m
+    [2m  - [pid=31635][err]  [0x0001868b553c][22m
+    [2m  - [pid=31635][err]  [0x000189b7170c][22m
+    [2m  - [pid=31635][err]  [0x0001847244b0][22m
+    [2m  - [pid=31635][err]  [0x00018470d630][22m
+    [2m  - [pid=31635][err]  [0x000189b70bb0][22m
+    [2m  - [pid=31635][err]  [0x000188d7c888][22m
+    [2m  - [pid=31635][err]  [0x0001897e6bb0][22m
+    [2m  - [pid=31635][err]  [0x000188da3a88][22m
+    [2m  - [pid=31635][err]  [0x000188fbbea8][22m
+    [2m  - [pid=31635][err]  [0x000188da3048][22m
+    [2m  - [pid=31635][err]  [0x000124834470][22m
+    [2m  - [pid=31635][err]  [0x000124832ee0][22m
+    [2m  - [pid=31635][err]  [0x0001247ec1ec][22m
+    [2m  - [pid=31635][err]  [0x0001247bb06c][22m
+    [2m  - [pid=31635][err]  [0x000122908ad8][22m
+    [2m  - [pid=31635][err]  [0x00012290a2a4][22m
+    [2m  - [pid=31635][err]  [0x00012a18ec30][22m
+    [2m  - [pid=31635][err]  [0x000123c5b858][22m
+    [2m  - [pid=31635][err]  [0x000123c5cda4][22m
+    [2m  - [pid=31635][err]  [0x000123c5c8c8][22m
+    [2m  - [pid=31635][err]  [0x000123c5ae98][22m
+    [2m  - [pid=31635][err]  [0x000123c5b28c][22m
+    [2m  - [pid=31635][err]  [0x00012a17fcac][22m
+    [2m  - [pid=31635][err]  [0x000120608e6c][22m
+    [2m  - [pid=31635][err]  [0x000104058938][22m
+    [2m  - [pid=31635][err]  [0x000184507e00][22m
+    [2m  - [pid=31635][err] [end of stack trace][22m
+
+
+
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/UI-01_userRegistrationLogin-AC1-User-Registrat-775b8--with-incorrect-password-shows-error-regression-toolshop-assessment/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/UI-01_userRegistrationLogin-AC1-User-Registrat-775b8--with-incorrect-password-shows-error-regression-toolshop-assessment/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [toolshop_assessment] › UI/02_endToEndPurchaseFlow.spec.js:33:3 › AC2: End-to-End Purchase Flow › AC2: Browse products, update cart, COD checkout and view invoice @regression 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /var/folders/08/q9nc8yb17pz5xc4xkw9gk1_w0000gn/T/cursor-sandbox-cache/80e28fcf40a714676ce4252eb3105f2b/playwright/chromium-1091/chrome-mac/Chromium.app/Contents/MacOS/Chromium --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --enable-use-zoom-for-dsf=false --use-angle --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/08/q9nc8yb17pz5xc4xkw9gk1_w0000gn/T/playwright_chromiumdev_profile-tdEMkT --remote-debugging-pipe --no-startup-window
+    <launched> pid=31644
+    [pid=31644][err] Received signal 11 SEGV_ACCERR 000100000008
+    [pid=31644][err]  [0x00011791a344]
+    [pid=31644][err]  [0x00011bb2a96c]
+    [pid=31644][err]  [0x00011bb372f0]
+    [pid=31644][err]  [0x0001848cf744]
+    [pid=31644][err]  [0x00019841c6e8]
+    [pid=31644][err]  [0x0001982c1e20]
+    [pid=31644][err]  [0x000197f8fcb0]
+    [pid=31644][err]  [0x000197ff2ae4]
+    [pid=31644][err]  [0x00018674fd00]
+    [pid=31644][err]  [0x0001868b553c]
+    [pid=31644][err]  [0x000189b7170c]
+    [pid=31644][err]  [0x0001847244b0]
+    [pid=31644][err]  [0x00018470d630]
+    [pid=31644][err]  [0x000189b70bb0]
+    [pid=31644][err]  [0x000188d7c888]
+    [pid=31644][err]  [0x0001897e6bb0]
+    [pid=31644][err]  [0x000188da3a88]
+    [pid=31644][err]  [0x000188fbbea8]
+    [pid=31644][err]  [0x000188da3048]
+    [pid=31644][err]  [0x00011bb40470]
+    [pid=31644][err]  [0x00011bb3eee0]
+    [pid=31644][err]  [0x00011baf81ec]
+    [pid=31644][err]  [0x00011bac706c]
+    [pid=31644][err]  [0x000119c14ad8]
+    [pid=31644][err]  [0x000119c162a4]
+    [pid=31644][err]  [0x00012149ac30]
+    [pid=31644][err]  [0x00011af67858]
+    [pid=31644][err]  [0x00011af68da4]
+    [pid=31644][err]  [0x00011af688c8]
+    [pid=31644][err]  [0x00011af66e98]
+    [pid=31644][err]  [0x00011af6728c]
+    [pid=31644][err]  [0x00012148bcac]
+    [pid=31644][err]  [0x000117914e6c]
+    [pid=31644][err]  [0x0001007b8938]
+    [pid=31644][err]  [0x000184507e00]
+    [pid=31644][err] [end of stack trace]
+    Call log:
+      [2m- <launching> /var/folders/08/q9nc8yb17pz5xc4xkw9gk1_w0000gn/T/cursor-sandbox-cache/80e28fcf40a714676ce4252eb3105f2b/playwright/chromium-1091/chrome-mac/Chromium.app/Contents/MacOS/Chromium --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --enable-use-zoom-for-dsf=false --use-angle --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/08/q9nc8yb17pz5xc4xkw9gk1_w0000gn/T/playwright_chromiumdev_profile-tdEMkT --remote-debugging-pipe --no-startup-window[22m
+    [2m  - <launched> pid=31644[22m
+    [2m  - [pid=31644][err] Received signal 11 SEGV_ACCERR 000100000008[22m
+    [2m  - [pid=31644][err]  [0x00011791a344][22m
+    [2m  - [pid=31644][err]  [0x00011bb2a96c][22m
+    [2m  - [pid=31644][err]  [0x00011bb372f0][22m
+    [2m  - [pid=31644][err]  [0x0001848cf744][22m
+    [2m  - [pid=31644][err]  [0x00019841c6e8][22m
+    [2m  - [pid=31644][err]  [0x0001982c1e20][22m
+    [2m  - [pid=31644][err]  [0x000197f8fcb0][22m
+    [2m  - [pid=31644][err]  [0x000197ff2ae4][22m
+    [2m  - [pid=31644][err]  [0x00018674fd00][22m
+    [2m  - [pid=31644][err]  [0x0001868b553c][22m
+    [2m  - [pid=31644][err]  [0x000189b7170c][22m
+    [2m  - [pid=31644][err]  [0x0001847244b0][22m
+    [2m  - [pid=31644][err]  [0x00018470d630][22m
+    [2m  - [pid=31644][err]  [0x000189b70bb0][22m
+    [2m  - [pid=31644][err]  [0x000188d7c888][22m
+    [2m  - [pid=31644][err]  [0x0001897e6bb0][22m
+    [2m  - [pid=31644][err]  [0x000188da3a88][22m
+    [2m  - [pid=31644][err]  [0x000188fbbea8][22m
+    [2m  - [pid=31644][err]  [0x000188da3048][22m
+    [2m  - [pid=31644][err]  [0x00011bb40470][22m
+    [2m  - [pid=31644][err]  [0x00011bb3eee0][22m
+    [2m  - [pid=31644][err]  [0x00011baf81ec][22m
+    [2m  - [pid=31644][err]  [0x00011bac706c][22m
+    [2m  - [pid=31644][err]  [0x000119c14ad8][22m
+    [2m  - [pid=31644][err]  [0x000119c162a4][22m
+    [2m  - [pid=31644][err]  [0x00012149ac30][22m
+    [2m  - [pid=31644][err]  [0x00011af67858][22m
+    [2m  - [pid=31644][err]  [0x00011af68da4][22m
+    [2m  - [pid=31644][err]  [0x00011af688c8][22m
+    [2m  - [pid=31644][err]  [0x00011af66e98][22m
+    [2m  - [pid=31644][err]  [0x00011af6728c][22m
+    [2m  - [pid=31644][err]  [0x00012148bcac][22m
+    [2m  - [pid=31644][err]  [0x000117914e6c][22m
+    [2m  - [pid=31644][err]  [0x0001007b8938][22m
+    [2m  - [pid=31644][err]  [0x000184507e00][22m
+    [2m  - [pid=31644][err] [end of stack trace][22m
+
+
+
+
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/UI-02_endToEndPurchaseFlow-AC2-End-to-End-Purc-cbdb1-e-cart-COD-checkout-and-view-invoice-regression-toolshop-assessment/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/UI-02_endToEndPurchaseFlow-AC2-End-to-End-Purc-cbdb1-e-cart-COD-checkout-and-view-invoice-regression-toolshop-assessment/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [toolshop_assessment] › UI/01_userRegistrationLogin.spec.js:20:3 › AC1: User Registration & Login › AC1: Register with valid details, login and verify profile @sanity @regression 
+    [toolshop_assessment] › UI/01_userRegistrationLogin.spec.js:43:3 › AC1: User Registration & Login › AC1 negative: Login with incorrect password shows error @regression 
+    [toolshop_assessment] › UI/02_endToEndPurchaseFlow.spec.js:33:3 › AC2: End-to-End Purchase Flow › AC2: Browse products, update cart, COD checkout and view invoice @regression 
+  4 passed (12.1s)

@@ -1,0 +1,11 @@
+{
+  "_comment": "Checkout billing data for E2E purchase flow",
+  "billing": {
+    "street": "Zoey Shore",
+    "city": "Hesselbury",
+    "state": "Florida",
+    "country": "United States",
+    "postal_code": "1234AA",
+    "payment_method": "cash-on-delivery"
+  }
+}
