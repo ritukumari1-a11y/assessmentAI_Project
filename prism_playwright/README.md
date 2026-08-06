@@ -1,68 +1,118 @@
-# PlayWright Prism Framework
+# QA Practical Assessment — Prism Playwright (Toolshop)
 
-## Framework Structure
+Playwright UI + API automation for the **QA AI Capability Exercise**, using the Prism Page Object Model framework.
 
-1. **API** - All the API related Functions.
-2. **UI** - All Web Related Functions
-3. **test-results** - HTML Report
-4. **allure-results** - Allure report (npx allure generate --clean allure-results && npx allure open)
-5. **node_modules** : Dependencies and libraries (Playwright & External)
-6. **tests** - API & UI tests and execution Steps.
-7. **.env File** - URLs and credentials like Base_URL and user data.
-8. **playwright.config.ts** - Project , directories, browsers and timeout setup.
+## Application Under Test
 
-## API :
+| Layer | URL |
+|-------|-----|
+| UI | https://practicesoftwaretesting.com |
+| API | https://api.practicesoftwaretesting.com |
 
-1. pageobjects - Page objects , EndPoints , Headers and Body data.
-2. testdata -
+## Assessment documentation (this folder)
 
-   1. Common API Responses (i.e. Get Request - 200 for success)) .
-   2. api_request.log : File created by requestToCurlLogger Utility, having API Curls.
-   3. login.json :
-3. utilities
+| Document | Purpose |
+|----------|---------|
+| [ASSESSMENT-COVERAGE.md](./ASSESSMENT-COVERAGE.md) | Maps every doc requirement → artifact |
+| [FOLDER-STRUCTURE.md](./FOLDER-STRUCTURE.md) | Required folder layout |
+| [TEST-DATA-STRATEGY.md](./TEST-DATA-STRATEGY.md) | Static/dynamic test data |
+| [execution-evidence/EXECUTION-SUMMARY.md](./execution-evidence/EXECUTION-SUMMARY.md) | Latest test run results |
 
-   1. apiHelper class , All the common functions for calling and API i.e. Get, Post, Put,Patch, Delete.
-   2. createDynamicData - Getters and Setters to store and reuse API responses.
-   3. excelReader: Utility to convert excel to JSON and read JSON data
-   4. excelWriter: Write JSON data into Excel files.
-   5. logger: Log data into debug console.
-   6. requestToCurlLogger: By using this utility, We can create a CURL request to the APIs, which can be further utilized in Postman to debug the issue.
-   7. storeFullAPIResponse: By using this utility, We can create JSON file for response , which can be further utilized for test data in various APIs.
+Parent repo: `../readme.md`, `../project-info.md`, `../FunctionalTestCase.csv`, `../ai-prompts/`
 
-## UI :
+## Prerequisites
 
-1. pageobjects - Page objects ,Locators & Page related Functions .
-2. resources -
-   1. testdata
-   2. images
-   3. pdfs
-3. utilities
-   1. commonutils - common methods of execution
-   2. databaseManager - DB connector
+```bash
+cd prism_playwright
+npm install
+npx playwright install chromium
+npx playwright install ffmpeg   # required for video on macOS
+```
 
-## Tests:
+On macOS, if Chromium crashes, use system Chrome:
 
-1. API tests - test cases and assertions.
-2. UI Tests - Web test cases
+```bash
+export PLAYWRIGHT_CHANNEL=chrome
+```
 
+## Environment setup
 
+```bash
+cp .env.example .env
+```
 
-<!-- Prerequisites -->
-1. Install Node from https://nodejs.org/en
-2. Install NPM
-3. Install VS code.
-4. Install VS code playwright Plugin by microsoft
+Required in `.env`:
 
-<!-- Installation Process -->
-1. Clone the Project Repo.
-2. Go to the cloned folder and open terminal there.
-3. Within terminal- Run command npm install
+```env
+TOOLSHOP_BASE_URL=https://practicesoftwaretesting.com
+TOOLSHOP_API_URL=https://api.practicesoftwaretesting.com
+PLAYWRIGHT_CHANNEL=chrome   # optional, recommended on Mac
+```
 
-<!-- Playwright CLI commands -->
-1. All playwright Tests - npx playwright test
-2. UI Mode - npx playwright test --ui
-3. Single Test File - npx playwright test landing-page.spec.js
-4. Single Test Only - npx playwright test -g "add a todo item"
-5. Headed Browser - npx playwright test --headed
-6. Browser Specific - npx playwright test --project webkit --project firefox
-7. Codegen - npx playwright codegen <WEB_URL>
+## Folder structure (summary)
+
+```
+tests/
+├── UI Test/          # AC1, AC2 E2E, product search
+└── API Test/         # API AC1, AC2, product search
+UI/pageobjects/toolshop/   # UI page objects
+API/pageobjects/toolshop/  # API endpoints & payloads
+UI/resources/data/toolshop/  # registrationData.json, billingData.json
+API/testdata/toolshop/       # invoicePayload.json
+```
+
+See [FOLDER-STRUCTURE.md](./FOLDER-STRUCTURE.md) for the full tree.
+
+## Automated tests (9 total)
+
+### UI tests (`tests/UI Test/`)
+
+| Spec | Tests | Tags | AC / CSV |
+|------|-------|------|----------|
+| `userRegistrationLogin.spec.js` | Register, login, profile; wrong password | @sanity @regression | AC1, TC-UI-001–005 |
+| `endToEndPurchaseFlow.spec.js` | Cart, checkout COD, invoice (confirm twice) | @regression | AC2, TC-UI-006–010 |
+| `productSearch.spec.js` | Search products by keyword | @regression | TC-UI-013 |
+
+### API tests (`tests/API Test/`)
+
+| Spec | Tests | Tags | AC / CSV |
+|------|-------|------|----------|
+| `userAuthCartCreation.spec.js` | Register, login, cart; invalid login | @sanity @regression | API AC1, TC-API-001–004 |
+| `productInvoiceGeneration.spec.js` | Products, cart, invoice; invalid cart | @regression | API AC2, TC-API-005–009 |
+| `productSearch.spec.js` | GET /products?search= | @regression | TC-API-010 |
+
+## How to run
+
+| Command | Description |
+|---------|-------------|
+| `PLAYWRIGHT_CHANNEL=chrome npm test` | Run all 9 tests |
+| `npm run test:smoke` | @sanity — UI AC1 + API AC1 |
+| `npm run test:regression` | @regression — full suite |
+| `npm run test:ui` | All UI tests |
+| `npm run test:api` | All API tests |
+| `npm run test:ui:ac1` | UI AC1 only |
+| `npm run test:ui:ac2` | UI AC2 E2E only |
+| `npm run test:ui:search` | UI product search |
+| `npm run test:api:ac1` | API AC1 only |
+| `npm run test:api:ac2` | API AC2 only |
+| `npm run test:api:search` | API product search |
+| `npm run report` | Open Playwright HTML report |
+| `npm run test:allure` | Run tests + generate Allure report |
+
+## Reports and execution evidence
+
+| Artifact | Location |
+|----------|----------|
+| Playwright HTML | `playwright-report/` |
+| Allure raw | `allure-results/` |
+| Allure HTML | `allure-report/` (after `npm run allure:generate`) |
+| Screenshots / video / trace | `test-results/` |
+| API CURL logs | `API/testdata/api_requests.log` |
+| Execution log | `executionResultLogs.log` |
+| Pass/fail summary | `execution-evidence/EXECUTION-SUMMARY.md` |
+
+## Important notes
+
+- **Invoice UI:** Press **Confirm** twice on checkout to generate the invoice (application requirement).
+- **Tags:** `@sanity` = smoke; `@regression` = full regression including negatives and AC2.
+- **Manual-only cases** (validation, NFR, edge) remain in `../FunctionalTestCase.csv`.

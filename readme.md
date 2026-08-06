@@ -62,7 +62,7 @@ From `prism_playwright/` directory:
 
 | Command | Description |
 |---------|-------------|
-| `npm test` | Run all 7 automated tests |
+| `npm test` | Run all 9 automated tests |
 | `npm run test:smoke` | **Smoke / Sanity** — `@sanity` (AC1 UI + API AC1) |
 | `npm run test:regression` | **Regression** — `@regression` (AC2, negatives, full suite) |
 | `npm run test:ui` | All UI tests |
@@ -128,6 +128,24 @@ npm run test:api:ac2
 ```
 
 **File:** `tests/API Test/productInvoiceGeneration.spec.js`
+
+#### UI / API Product Search (TC-UI-013, TC-API-010)
+
+```bash
+npm run test:ui:search
+npm run test:api:search
+```
+
+**Files:** `tests/UI Test/productSearch.spec.js`, `tests/API Test/productSearch.spec.js`
+
+### Assessment docs inside prism_playwright
+
+| Document | Path |
+|----------|------|
+| Coverage matrix | `prism_playwright/ASSESSMENT-COVERAGE.md` |
+| Folder structure | `prism_playwright/FOLDER-STRUCTURE.md` |
+| Test data strategy | `prism_playwright/TEST-DATA-STRATEGY.md` |
+| Execution summary | `prism_playwright/execution-evidence/EXECUTION-SUMMARY.md` |
 
 ### Reports & Evidence (final output locations)
 
