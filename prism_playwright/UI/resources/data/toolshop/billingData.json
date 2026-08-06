@@ -5,7 +5,9 @@
     "city": "Hesselbury",
     "state": "Florida",
     "country": "United States",
-    "postal_code": "1234AA",
+    "countryCode": "US",
+    "postal_code": "33101",
+    "house_number": "42",
     "payment_method": "cash-on-delivery"
   }
 }

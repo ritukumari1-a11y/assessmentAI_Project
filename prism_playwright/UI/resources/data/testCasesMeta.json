@@ -5,5 +5,7 @@
   "api_ac1": ["QA-API-AC1"],
   "api_ac2": ["QA-API-AC2"],
   "api_ac1_neg": ["QA-API-AC1-NEG"],
-  "api_ac2_neg": ["QA-API-AC2-NEG"]
+  "api_ac2_neg": ["QA-API-AC2-NEG"],
+  "ac2_ui_search": ["QA-UI-AC2-SEARCH"],
+  "api_ac2_search": ["QA-API-AC2-SEARCH"]
 }
