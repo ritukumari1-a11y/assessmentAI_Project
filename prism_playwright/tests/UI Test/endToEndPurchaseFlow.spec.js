@@ -42,7 +42,6 @@ test.describe("AC2: End-to-End Purchase Flow", () => {
     await productPage.goto();
     await productPage.verifyProductsVisible();
     await productPage.addMultipleProductsToCart(2);
-    await productPage.goToCart();
 
     await cartPage.verifyCartHasItems(2);
     await cartPage.updateItemQuantity(0, 2);
@@ -55,7 +54,6 @@ test.describe("AC2: End-to-End Purchase Flow", () => {
     await checkoutPage.confirmOrderTwice();
     await checkoutPage.verifyOrderSuccess();
 
-    await loginPage.openProfileMenu();
     await invoicePage.openInvoicesPage();
     await invoicePage.verifyInvoiceVisible();
     await invoicePage.openFirstInvoice();

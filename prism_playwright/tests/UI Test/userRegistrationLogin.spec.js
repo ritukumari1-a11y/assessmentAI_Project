@@ -1,7 +1,10 @@
-const { test } = require("@playwright/test");
+const { test, expect } = require("@playwright/test");
 const { POManager } = require("../../UI/pageobjects/POManager");
 const registrationData = require("../../UI/resources/data/toolshop/registrationData.json");
 const utils = require("../../commonUtils/utils");
+const { commonMethods } = require("../../API/utilities/apiHelper");
+const { _Response } = require("../../API/testdata/commonAPIResponse");
+const authPage = require("../../API/pageobjects/toolshop/toolshopAuthPage");
 
 /**
  * AC1: User Registration & Login
@@ -43,13 +46,15 @@ test.describe("AC1: User Registration & Login", () => {
   test("AC1 negative: Login with incorrect password shows error @regression", async () => {
     await utils.addTestAnnotationsByKeyword("ac1_ui_neg");
 
-    const registrationPage = poManager.getToolshopRegistrationPage();
+    const apiClient = new commonMethods();
+    const registerResponse = await apiClient.PostResponse(
+      authPage.registerEndpoint,
+      authPage.buildRegisterPayload(uniqueEmail),
+      authPage.registerHeader
+    );
+    expect(registerResponse.status()).toBe(_Response.postPositive);
+
     const loginPage = poManager.getToolshopLoginPage();
-
-    await registrationPage.goto();
-    await registrationPage.registerUser(registrationData.validUser, uniqueEmail);
-    await registrationPage.verifyRegistrationSuccess();
-
     await loginPage.goto();
     await loginPage.login(uniqueEmail, "WrongPassword!99");
     await loginPage.verifyLoginFailure();
