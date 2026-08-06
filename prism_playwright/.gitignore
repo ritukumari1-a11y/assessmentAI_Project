@@ -1,0 +1,9 @@
+allure-results/
+allure-report/
+playwright-report/
+test-results/
+node_modules/
+.env
+storeBrowserState.json
+executionResultLogs.log
+API/testdata/api_requests.log

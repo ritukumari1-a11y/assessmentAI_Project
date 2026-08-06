@@ -21,6 +21,7 @@ export default defineConfig({
       testMatch: ["tests/UI Test/**/*.spec.js", "tests/API Test/**/*.spec.js"],
       use: {
         browserName: "chromium",
+        ...(process.env.PLAYWRIGHT_CHANNEL ? { channel: process.env.PLAYWRIGHT_CHANNEL } : {}),
         headless: true,
         screenshot: "on",
         video: {
