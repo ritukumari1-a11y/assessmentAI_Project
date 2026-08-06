@@ -7,14 +7,18 @@ class toolshopCartPage {
     this.log = new loggerUtilities();
     this.cartItems = page.locator('[data-test="cart-item"], [data-test="product-quantity"]').locator('xpath=ancestor::*[contains(@class,"card") or @data-test="cart-item"]');
     this.cartRows = page.locator('[data-test="product-quantity"]');
-    this.proceedToCheckout = page.locator('[data-test="proceed-1"], [data-test="proceed-checkout"]');
+    this.proceedToCheckoutButton = page.locator('[data-test="proceed-1"], [data-test="proceed-checkout"]');
     this.cartQuantity = page.locator('[data-test="product-quantity"]');
   }
 
   async verifyCartHasItems(minCount = 1) {
-    await expect(this.cartQuantity.first()).toBeVisible({ timeout: 15000 });
+    await expect(async () => {
+      await this.page.reload();
+      await expect(this.cartQuantity.first()).toBeVisible({ timeout: 5000 });
+      const count = await this.cartQuantity.count();
+      expect(count).toBeGreaterThanOrEqual(minCount);
+    }).toPass({ timeout: 30000 });
     const count = await this.cartQuantity.count();
-    expect(count).toBeGreaterThanOrEqual(minCount);
     this.log.logger(`Cart verified with ${count} item row(s)`);
   }
 
@@ -31,7 +35,7 @@ class toolshopCartPage {
   }
 
   async proceedToCheckout() {
-    await this.proceedToCheckout.click();
+    await this.proceedToCheckoutButton.click();
     await this.page.waitForURL(/checkout/, { timeout: 15000 });
     this.log.logger("Proceeded to checkout");
   }

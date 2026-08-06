@@ -27,19 +27,67 @@ class toolshopProductPage {
   }
 
   async addMultipleProductsToCart(count = 2) {
-    const buttons = this.addToCartButtons;
-    const total = await buttons.count();
-    const itemsToAdd = Math.min(count, total);
-    for (let i = 0; i < itemsToAdd; i++) {
-      await buttons.nth(i).click();
-      await this.page.waitForTimeout(800);
+    const apiBase = process.env.TOOLSHOP_API_URL;
+    const response = await this.page.request.get(`${apiBase}/products`, {
+      headers: { accept: "application/json" },
+    });
+    const products = (await response.json()).data || [];
+    const addedProductIds = new Set();
+
+    for (const product of products) {
+      if (addedProductIds.size >= count) break;
+
+      await this.page.goto(`${process.env.TOOLSHOP_BASE_URL}/product/${product.id}`);
+      await expect(this.productName).toBeVisible({ timeout: 15000 });
+
+      if (await this.page.getByText(/out of stock/i).isVisible().catch(() => false)) {
+        continue;
+      }
+
+      const addButton = this.addToCartButtons.first();
+      if (!(await addButton.isEnabled({ timeout: 3000 }).catch(() => false))) {
+        continue;
+      }
+
+      const addResponse = await Promise.all([
+        this.page.waitForResponse(
+          (resp) =>
+            resp.url().includes("carts") &&
+            ["POST", "PUT", "PATCH"].includes(resp.request().method()) &&
+            resp.ok(),
+          { timeout: 20000 }
+        ),
+        addButton.click(),
+      ]);
+      expect(addResponse[0].ok()).toBeTruthy();
+      addedProductIds.add(product.id);
+      await this.page.waitForTimeout(2500);
     }
-    this.log.logger(`Added ${itemsToAdd} product(s) to cart`);
+
+    expect(addedProductIds.size).toBe(count);
+
+    await this.goToCart();
+    await expect(async () => {
+      await this.page.reload();
+      await expect(this.page.locator('[data-test="product-quantity"]').first()).toBeVisible({
+        timeout: 5000,
+      });
+      expect(await this.page.locator('[data-test="product-quantity"]').count()).toBeGreaterThanOrEqual(
+        count
+      );
+    }).toPass({ timeout: 60000 });
+
+    this.log.logger(`Added ${addedProductIds.size} product(s) to cart`);
   }
 
   async goToCart() {
-    await this.cartLink.click();
-    await this.page.waitForURL(/cart/, { timeout: 15000 });
+    const cartNav = this.page.locator('[data-test="nav-cart"], a[href*="checkout"]');
+    if ((await cartNav.count()) > 0 && (await cartNav.first().isVisible())) {
+      await cartNav.first().click();
+    } else {
+      await this.page.goto(`${process.env.TOOLSHOP_BASE_URL}/checkout`);
+    }
+    await this.page.waitForURL(/cart|checkout/, { timeout: 15000 });
     this.log.logger("Navigated to cart page");
   }
 

@@ -79,8 +79,8 @@ async function generateRandomData(fieldType, min = 0, max = 10) {
         return Math.random().toString(36).substring(7);
 
       case "email":
-        // Generate a random email address
-        return `${Math.random().toString(36).substring(7)}@example.com`;
+        // Use mailinator.com — matches API tests and is accepted by Toolshop registration
+        return `qa.automation.${Math.random().toString(36).substring(2, 10)}@mailinator.com`;
 
       case "number":
         // Generate a random number between min input value and max input value

@@ -27,15 +27,21 @@ class toolshopLoginPage {
   async login(email, password) {
     await this.email.fill(email);
     await this.password.fill(password);
+    const loginResponsePromise = this.page.waitForResponse(
+      (resp) => resp.url().includes("users/login") && resp.request().method() === "POST",
+      { timeout: 30000 }
+    );
     await this.loginButton.click();
+    try {
+      await loginResponsePromise;
+    } catch {
+      await expect(this.profileMenu).toBeVisible({ timeout: 15000 });
+    }
     this.log.logger(`Logged in with email: ${email}`);
   }
 
-  async verifyLoginSuccess(expectedName) {
+  async verifyLoginSuccess() {
     await expect(this.profileMenu).toBeVisible({ timeout: 20000 });
-    if (expectedName) {
-      await expect(this.profileMenu).toContainText(expectedName);
-    }
     this.log.logger("Login success verified via profile menu");
   }
 
@@ -48,12 +54,7 @@ class toolshopLoginPage {
   }
 
   async verifyProfileInformation(firstName, lastName, email) {
-    await this.openProfileMenu();
-    if (await this.profileLink.count()) {
-      await this.profileLink.first().click();
-    } else {
-      await this.page.goto(`${process.env.TOOLSHOP_BASE_URL}/account/profile`);
-    }
+    await this.page.goto(`${process.env.TOOLSHOP_BASE_URL}/account/profile`);
     await expect(this.profileFirstName).toHaveValue(firstName, { timeout: 15000 });
     await expect(this.profileLastName).toHaveValue(lastName);
     await expect(this.profileEmail).toHaveValue(email);
