@@ -8,7 +8,7 @@
 - API: https://api.practicesoftwaretesting.com/api/documentation
 
 **Assessment Start Date:** July 10, 2026  
-**Submission Date:** July 10, 2026
+**Submission Date:** August 6, 2026
 
 ---
 
